@@ -1,0 +1,238 @@
+package com.company;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int exemplo = 0;
+        System.out.println("Digite o numero do exemplo que deseja executa-lo");
+        exemplo = entrada.nextInt();
+
+        switch(exemplo) {
+            case 1: {
+                int numeroLido;
+                int menor;
+                int maior;
+                final int CONTADOR = 5;
+
+                System.out.println("Informe um valor");
+                numeroLido = entrada.nextInt();
+
+                menor = numeroLido;
+                maior = numeroLido;
+
+                for (int i = 1; i < CONTADOR; i++) {
+                    System.out.println("Informe um valor");
+                    numeroLido = entrada.nextInt();
+
+                    if(numeroLido > maior){
+                        maior = numeroLido;
+                    }
+
+                    if(numeroLido < menor){
+                        menor = numeroLido;
+                        break;
+                    }
+                }
+
+                System.out.println("O menor número lido foi: " + menor);
+                System.out.println("O maior número lido foi: " + maior);
+                break;
+            }
+            case 2: {
+                int numero1;
+
+                System.out.println("Informe o numero");
+                numero1 = entrada.nextInt();
+
+                if (numero1 > 0) {
+                    System.out.println("O numero é positivo : " + numero1);
+                }
+                else {
+                    if (numero1 < 0) ;
+                    System.out.println("O numero é Negativo : " + numero1);
+                }
+                break;
+            }
+            case 3: {
+                System.out.println("Informe seu sexo - F/f(feminino) , M/m(masculino):");
+                String sexo = entrada.next();
+                if ("f".equalsIgnoreCase(sexo)){
+                    System.out.println("Sexo Feminino");
+                } else if ("m".equalsIgnoreCase(sexo)){
+                    System.out.println("Sexo Masculino");
+                }else{
+                    System.out.println("Sexo Inválido");
+                }
+                break;
+            }
+            case 4: {
+                System.out.println("Digite uma letra do analfabeto");
+                String letra = entrada.next();
+                char consoante =letra.charAt(0);
+
+                System.out.println(letra);
+
+                switch(consoante) {
+                    case 'a': {
+                        System.out.println("a letra "+letra+",é uma vogal");
+                        break;
+                    }
+                    case 'e': {
+                        System.out.println("a letra "+letra+",é uma vogal");
+                        break;
+                    }
+                    case 'i': {
+                        System.out.println("a letra "+letra+",é uma vogal");
+                        break;
+                    }
+                    case 'o': {
+                        System.out.println("a letra "+letra+",é uma vogal");
+                        break;
+                    }
+                    case 'u': {
+                        System.out.println("a letra "+letra+",é uma vogal");
+                        break;
+                    }
+                    default:
+                        System.out.println("a letra "+letra+",é uma vogal");
+                }
+                break;
+            }
+            case 5: {
+                double nota1,nota2,média;
+
+                System.out.println("Digite a primeira nota");
+                nota1 = entrada.nextDouble();
+
+                System.out.println("Digite a segunda nota");
+                nota2 = entrada.nextDouble();
+
+                média = (nota1 + nota2)/2;
+                System.out.println("A media é igual a " + média);
+
+                if (média == 10) {
+                    System.out.println("Aprovado com Distinção");
+                }else if (média >= 7) {
+                    System.out.println("Aprovado");
+                }else if (média < 7) {
+                    System.out.println("Reprovado");
+                }
+                break;
+            }
+            case 6: {
+                double numero1,numero2,numero3;
+
+                System.out.println("Digite o primeiro numero");
+                numero1 = entrada.nextDouble();
+
+                System.out.println("Digite o segundo numero");
+                numero2 = entrada.nextDouble();
+
+                System.out.println("Digite o terceiro numero");
+                numero3 = entrada.nextDouble();
+
+                if (numero1 > numero2 && numero1 > numero3) {
+                    System.out.println("O maior numero é : " + numero1);
+                } else if (numero2 > numero1 && numero2 > numero3) {
+                    System.out.println("O maior numero é : " +numero2);
+                }else if (numero3 > numero1 && numero3 > numero2) {
+                    System.out.println("O maior numero é : " + numero3);
+                    break;
+                }
+            }
+            case 7: {
+                double numero1,numero2,numero3;
+
+                System.out.println("Digite o primeiro numero");
+                numero1 = entrada.nextDouble();
+
+                System.out.println("Digite o segundo numero");
+                numero2 = entrada.nextDouble();
+
+                System.out.println("Digite o terceiro numero");
+                numero3 = entrada.nextDouble();
+
+                if (numero1 < numero2 && numero1 < numero3) {
+                    System.out.println("O menor numero é : " + numero1);
+                } else if (numero2 < numero1 && numero2 < numero3) {
+                    System.out.println("O menor numero é : " +numero2);
+                }else if (numero3 < numero1 && numero3 < numero2) {
+                    System.out.println("O menor numero é : " + numero3);
+                    break;
+                }
+            }
+            case 8: {
+                float preço1,preço2,preço3;
+
+                System.out.println("Informe o primeiro preço");
+                preço1 = entrada.nextFloat();
+
+                System.out.println("Informe o segundo preço");
+                preço2 = entrada.nextFloat();
+
+                System.out.println("Informe o terceiro preço");
+                preço3 = entrada.nextFloat();
+
+                if (preço1 < preço2 && preço1 < preço3) {
+                    System.out.println("O mais barato é : " + preço1);
+                }else if (preço2 < preço1 && preço2 < preço3) {
+                    System.out.println("O mais barato é : " + preço2);
+                }else if (preço3 < preço1 && preço3 < preço2) {
+                    System.out.println("O mais barato é : " + preço3);
+                    break;
+                }
+            }
+            case 9: {
+                int a;
+                int b;
+                int c;
+
+                System.out.println("Digite o primeiro numero");
+                a = entrada.nextInt();
+
+                System.out.println("Digite o segundo numero");
+                b = entrada.nextInt();
+
+                System.out.println("Digite o terceiro numero");
+                c = entrada.nextInt();
+
+                if (a > b) {
+                    if (b > c) {
+                        System.out.println(a + "\n" + b + "\n" + c);
+                    } else if (a > c) {
+                        System.out.println(a + "\n" + c + "\n" + b);
+                    } else {
+                        System.out.println(c + "\n" + a + "\n" + b);
+                    }
+                } else if (b > c) {
+                    if (a > c) {
+                        System.out.println(b + "\n" + a + "\n" + c);
+                    } else {
+                        System.out.println(b + "\n" + c + "\n" + a);
+                    }
+                } else {
+                    System.out.println(c + "\n" + b + "\n" + a);
+                }
+                break;
+            }
+            case 10: {
+                System.out.println("Informe seu turno - M/m(Matutino) , V/v(Vespertino) , N/n(Noturno):");
+                String turno = entrada.next();
+                if ("M".equalsIgnoreCase(turno)) {
+                    System.out.println("Bom Dia");
+                } else if ("V".equalsIgnoreCase(turno)) {
+                    System.out.println("Boa Tarde");
+                } else if ("N".equalsIgnoreCase(turno)) {
+                    System.out.println("Boa Noite");
+                } else {
+                    System.out.println("Valor Inválido");
+                    break;
+                }
+            }
+        }
+    }
+}
