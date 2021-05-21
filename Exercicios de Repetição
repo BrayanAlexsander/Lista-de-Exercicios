@@ -1,0 +1,297 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite o numero do exemplo que deseja executa-lo");
+        int exemploRepetição = entrada.nextInt();
+
+        switch (exemploRepetição) {
+            case 1: {
+                boolean notaValida = false;
+
+                do {
+                    System.out.println("Digite uma nota");
+
+                    Double nota = entrada.nextDouble();
+
+                    if (nota >= 0 && nota <= 10) {
+                        notaValida = true;
+                        System.out.println("Você digitou: " + nota);
+                    } else {
+                        //notaValida = false;
+                        System.out.println("Nota Inválida, digite novamente.");
+                    }
+                } while (!notaValida);
+                break;
+            }
+            case 2: {
+                System.out.println("Faça seu cadastro");
+                char logintest,senha;
+                boolean login = true;
+
+                while(login) {
+                    System.out.println("Informe o login");
+                    logintest = entrada.next().charAt(0);
+
+                    System.out.println("Informe a senha");
+                    senha = entrada.next().charAt(0);
+
+                    if (logintest != senha) {
+                        System.out.println("Cadastro Completo com Êxito");
+                        break;
+                    }else if (logintest == senha) {
+                        System.out.println("A senha não pode ser igual ao login");
+                    }
+                }
+                break;
+            }
+            case 3: {
+                String nome;
+                int idade;
+                float salario = 0;
+                char sexotest,estado_civil;
+                boolean sexo = true;
+
+                while(true) {
+                    System.out.println("Informe seu nome");
+                    nome = entrada.nextLine();
+                    if(nome.length() > 3) {
+                        break;
+                    }else{
+                        System.out.println("O seu nome precisa ter mais que 3 caracteres");
+                    }
+                }
+                while(true) {
+                    System.out.println("Informe a sua idade");
+                    idade = entrada.nextInt();
+                    if(idade > 0 && idade <= 150) {
+                        break;
+                    }else{
+                        System.out.println("A sua idade precisa estar entre 0 e 150");
+                    }
+                }
+                while(true) {
+                    System.out.println("Informe o seu salario");
+                    salario = entrada.nextFloat();
+                    if(salario > 0) {
+                        break;
+                    }else{
+                        System.out.println("O salario precisa ser maior que 0");
+                    }
+                }
+                while(sexo) {
+                    System.out.println("Informe seu sexo 'M' 'F'");
+                    sexotest = entrada.next().charAt(0);
+                    if (sexotest == 'M') {
+                        System.out.println("Sexo Válido");
+                        break;
+                    }else if (sexotest == 'm') {
+                        System.out.println("Sexo Válido");
+                        break;
+                    }else if (sexotest == 'F') {
+                        System.out.println("Sexo Válido");
+                        break;
+                    }else if (sexotest == 'f') {
+                        System.out.println("Sexo válido");
+                        break;
+                    }else{
+                        System.out.println("Sexo inválido");
+                    }
+                }
+                while(true) {
+                    System.out.println("Informe o seu estado civil 's' 'c' 'v' 'd'");
+                    estado_civil = entrada.next().charAt(0);
+                    if (estado_civil == 's') {
+                        System.out.println("Estado civil Válido");
+                        break;
+                    }else if (estado_civil == 'c') {
+                        System.out.println("Estado civil Válido");
+                        break;
+                    }else if (estado_civil == 'v') {
+                        System.out.println("Estado civil Válido");
+                        break;
+                    }else if (estado_civil =='d') {
+                        System.out.println("Estado civil Válido");
+                        break;
+                    }else {
+                        System.out.println("Estado civil Inválido");
+                    }
+                }
+                break;
+            }
+            case 4: {
+                double popA = 0, popB = 0, TaxaA,TaxaB;
+                int anos = 0;
+                System.out.println("Informe a quantidade da população da cidade A");
+                popA = entrada.nextDouble();
+
+                System.out.println("Informe a quantidade da população da cidade B");
+                popB = entrada.nextDouble();
+
+                System.out.println("Informe a Taxa de crescimento da cidade A");
+                TaxaA = entrada.nextDouble();
+
+                System.out.println("Informe a Taxa de crescimento da cidade B");
+                TaxaB = entrada.nextDouble();
+
+                while (popA < popB) {
+                    popA = (popA * TaxaA)*100;
+                    popB = (popB * TaxaB)*100;
+                    anos = anos + 1;
+                }
+
+                System.out.printf("Populacao Pais A = %.0f habitantes.\n", popA);
+                System.out.printf("Populacao Pais B = %.0f habitantes.\n", popB);
+                System.out.printf("\n");
+                System.out.printf("Pais A ultrapassa Pais B em %d anos.\n", anos);
+
+                break;
+            }
+            case 5: {
+                double habA = 0,habB = 0;
+                float  TaxaA, TaxaB;
+                int Ano = 0;
+                Boolean valido = null;
+
+                do {
+                    System.out.println("Informe a População da cidade A " + habA);
+                    habA = entrada.nextDouble();
+                    if (habA > 0) {
+                        valido = true;
+                    } else {
+                        System.out.println("A população da cidade A precisa ser maior que 0");
+                    }
+                    System.out.println("Informe a População da cidade B " + habB);
+                    habB = entrada.nextDouble();
+
+                    if  (habB > 0) {
+                        valido = true;
+                    } else {
+                        System.out.println("A população da cidade B precisa ser maior que 0");
+                    }
+                    System.out.println("Informe a Taxa de crescimento da populaçãoA");
+                    TaxaA = entrada.nextFloat();
+                    if (TaxaA > 0) {
+                        valido = true;
+                    } else {
+                        System.out.println("A Taxa de crescimento da população A precisa ser maior que 0");
+                    }
+                    System.out.println("Informe a Taxa de crescimento da populaçãoB");
+                    TaxaB = entrada.nextFloat();
+                    if (TaxaB > 0) {
+                    } else {
+                        System.out.println("A Taxa de crescimento da população B precisa ser maior que 0");
+                    }while (habA < habB) {
+                        if (habA < habB) {
+                            habA += (habA * TaxaA) / 100;
+                            habB += (habB * TaxaB) / 100;
+                            Ano = Ano + 1;
+
+                            System.out.println("população A : " + habA);
+                            System.out.println("população B : " + habB);
+                            System.out.println("Para a cidadeA ultrapassar a cidade B levará " + Ano);
+                        }
+                    }
+                }while (valido);
+                break;
+            }
+            case 6: {
+                for(int i =1;i <=20;i++) {
+                    System.out.println(i);
+                }
+                for(int i = 1; i <=20;i++) {
+                    if(i==20) {
+                        System.out.println(i);
+                    }
+                }
+                break;
+            }
+            case 7: {
+                float[][] numeros = new float[5][2];
+                for (int i = 0; i < numeros.length; i++) {
+                    System.out.println("Digite o numero " + (i + 1));
+                    numeros[i][0] = entrada.nextFloat();
+                }
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        numeros[i][1] = numeros[i][0] > numeros[j][0] ? numeros[i][1] + 1 : numeros[i][1];
+                    }
+                }
+                for (int i = 0; i < 5; i++) {
+                    if (numeros[i][1] == 4) {
+                        System.out.println("Maior numero é o: " + i + ", equivale: " + numeros[i][0]);
+                    }
+                }
+                break;
+            }
+            case 8: {
+                int n1, n2, n3, n4, n5, soma;
+                double Media;
+
+                System.out.println("Informe o primeiro numero");
+                n1 = entrada.nextInt();
+
+                System.out.println("Informe o segundo numero");
+                n2 = entrada.nextInt();
+
+                System.out.println("Informe o terceiro numero");
+                n3 = entrada.nextInt();
+
+                System.out.println("Informe o quarto numero");
+                n4 = entrada.nextInt();
+
+                System.out.println("Informe o quinto numero");
+                n5 = entrada.nextInt();
+
+                soma = n1 + n2 + n3 + n4 + n5;
+                Media = soma / 5;
+
+                System.out.println("A Media dos números lidos foi: " + Media);
+                break;
+            }
+            case 9: {
+                int numero;
+                boolean numero_test;
+
+                System.out.println("Informe o numero");
+                numero = entrada.nextInt();
+
+                while (numero < 1 || numero > 50) {
+
+                    System.out.println("Numero Invalido! Digite outro numero");
+                    numero = entrada.nextInt();
+                }
+                System.out.println("Numero Valido");
+
+                for (numero = 1; numero < 50; numero++) {
+                    if (numero % 2 != 0) {
+                        System.out.println("Numero Valido!, valor impar:" + numero);
+                        System.out.println(+numero);
+                    }
+                }
+                break;
+            }
+            case 10: {
+                int num1, num2, i, par = 0;
+
+                System.out.println("Digite o primeiro numero");
+                num1 = entrada.nextInt();
+
+                System.out.println("Digite o segundo numero");
+                num2 = entrada.nextInt();
+
+                for (i = num1; i < num2; i++) {
+                    if ((i % 2) == 0) {
+                        par = par + 2;
+                    }
+                }
+                System.out.println("Intervalo entre os dois numeros é " + par);
+                break;
+            }
+        }
+    }
+}
