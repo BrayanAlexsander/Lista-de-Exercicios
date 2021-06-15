@@ -3,28 +3,19 @@ package ExercicioDeStrings;
 import java.util.Scanner;
 
 public class Exercicio5 {
-
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite uma frase");
-        String frase = entrada.next();
-        String[] frasesplit = frase.split("");
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Digite uma palavra");
+        String palavra = myScanner.nextLine();
 
-        int vogais = 0;
-        int emBranco = 0;
+        String[] palavraSplit = palavra.toUpperCase().split("");
 
-        String[] letrasVogais = {"a","e","i","o","u"};
-        for (int i = 0;i < frasesplit.length;i++) {
-            if(frasesplit[i].equalsIgnoreCase("")) {
-                emBranco++;
+        for (int i=palavraSplit.length; i>0; i--){
+            for (int j=0; j<i; j++){
+                System.out.print(palavraSplit[j]);
             }
-            for(int j=0;i < letrasVogais.length;j++) {
-                if(frasesplit[i].equalsIgnoreCase(letrasVogais[j])) {
-                    vogais++;
-                }
-            }
+            System.out.println();
         }
-        System.out.printf("Espaços em Branco existentes na frase : %d%n", emBranco);
-        System.out.printf("vogais existente na frase: %d", vogais);
+
     }
 }
