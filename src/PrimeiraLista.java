@@ -8,8 +8,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Main {
-    public Main() {
+public class PrimeiraLista {
+    public PrimeiraLista() {
     }
 
     public static void main(String[] args) {
