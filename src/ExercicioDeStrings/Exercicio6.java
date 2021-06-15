@@ -21,12 +21,12 @@ public class Exercicio6 {
             }
         } while (true);
 
-        dataSplit[1] = qualMesPorExtenso(dataSplit[1]);
+        dataSplit[1] = Mes(dataSplit[1]);
 
         System.out.println("Você nasceu em: " + dataSplit[0] + " de " + dataSplit[1] + " de " + dataSplit[2]);
     }
 
-    private static String qualMesPorExtenso(String numeroDoMes) {
+    private static String Mes(String numeroDoMes) {
         switch (Integer.parseInt(numeroDoMes)) {
             case 1 -> {
                 return "Janeiro";
